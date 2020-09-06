@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+    lambda:
+        restart: always
+        build: ./lambda
+        volumes:
+            - ./lambda:/app
+        env_file: 
+            - .env
+            - .env_secret
+        stdin_open: true # docker run -i
+        tty: true        # docker run -t
+        command: bash
+        #command: ./bootup.sh
