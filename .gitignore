@@ -7,3 +7,6 @@ __pycache__
 .idea
 .env_secret
 .vscode
+.aws-sam
+*.toml
+credentials
