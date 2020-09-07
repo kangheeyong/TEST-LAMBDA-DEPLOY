@@ -14,7 +14,7 @@ Resources:
   CaseStateMachine:
     Type: AWS::Serverless::StateMachine # More info about State Machine Resource: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-resource-statemachine.html
     Properties:
-      DefinitionUri: statemachine/state.asl.json
+      DefinitionUri: state.asl.json
       DefinitionSubstitutions:
         CaseAFunctionArn: !GetAtt CaseAFunction.Arn
         CaseBFunctionArn: !GetAtt CaseBFunction.Arn
@@ -30,6 +30,7 @@ Resources:
       CodeUri: case_1/
       Handler: main.lambda_handler
       Runtime: python3.7
+
   
   CaseBFunction:
     Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
