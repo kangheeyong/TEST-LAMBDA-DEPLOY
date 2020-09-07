@@ -1,0 +1,26 @@
+{
+    "Comment": "test",
+    "StartAt": "CaseAFunction",
+    "States": {
+        "CaseAFunction": {
+            "Type": "Task",
+            "Resource": "${CaseAFunctionArn}",
+            "Parameters": {
+                "Payload": {
+                    "Input.$": "$"
+                }
+            },
+            "Next": "CaseBFunction"
+        },
+        "CaseBFunction": {
+            "Type": "Task",
+            "Resource": "${CaseBFunctionArn}",
+            "Parameters": {
+                "Payload": {
+                    "Input.$": "$"
+                }
+            },
+            "End": true
+        }
+    }
+}
